@@ -167,6 +167,9 @@ EOF
       mkdir -p "$OE_TMP/EFI/BOOT"
       cp $ROOT/$TOOLCHAIN/share/syslinux/bootx64.efi "$OE_TMP/EFI/BOOT"
       cp $ROOT/$TOOLCHAIN/share/syslinux/ldlinux.e64 "$OE_TMP/EFI/BOOT"
+      cat << EOF > "$OE_TMP"/startup.nsh
+fs0:\EFI\BOOT\bootx64.efi
+EOF
       cat << EOF > "$OE_TMP"/EFI/BOOT/syslinux.cfg
 DEFAULT live
 
