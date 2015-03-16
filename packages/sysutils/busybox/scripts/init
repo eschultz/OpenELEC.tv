@@ -27,7 +27,6 @@
   /bin/busybox mkdir -p /flash
   /bin/busybox mkdir -p /sysroot
   /bin/busybox mkdir -p /storage
-  /bin/busybox mkdir -p /unraid
 
   # mount all needed special filesystems
   /bin/busybox mount -t devtmpfs devtmpfs /dev
@@ -606,9 +605,6 @@
     if [ -n "$disk" ]; then
       mount --move /storage /sysroot/storage
     fi
-
-    mount_virtfs "unraid" "/unraid"
-    mount --move /unraid /sysroot/unraid
 
     if [ ! -d "/sysroot/lib/modules/$(uname -r)/" -a -f "/sysroot/usr/lib/systemd/systemd" ]; then
       echo ""
