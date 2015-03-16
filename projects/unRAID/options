@@ -112,4 +112,4 @@
     INSTALLER_SUPPORT="no"
 
   # VERSION: set full version, use "devel" for development version
-    OPENELEC_VERSION="5.0.4"
+    OPENELEC_VERSION="5.0.6"
