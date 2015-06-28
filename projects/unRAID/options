@@ -98,3 +98,6 @@
   # Space separated list is supported,
   # e.g. ADDITIONAL_DRIVERS="DRIVER1 DRIVER2"
     ADDITIONAL_DRIVERS="$ADDITIONAL_DRIVERS mt7601u bcm_sta"
+
+  # build with installer (yes / no)
+    INSTALLER_SUPPORT="no"
