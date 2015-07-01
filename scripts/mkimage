@@ -125,6 +125,7 @@ LABEL live
   KERNEL /$KERNEL_NAME
   APPEND boot=UUID=$UUID_SYSTEM disk=VIRTFS=appconfig noram quiet tty vga=current
 EOF
+      cp $ROOT/projects/$PROJECT/oemsplash.png "$OE_TMP"/oemsplash.png
     else
       cat << EOF > "$OE_TMP"/syslinux.cfg
 SAY Press <TAB> to edit options
