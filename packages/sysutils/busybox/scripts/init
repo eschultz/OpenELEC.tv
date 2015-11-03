@@ -304,7 +304,7 @@
     # Mount VIRTFS export
     VIRTFS_TAG="${1%%,*}"
 
-    mount_common "$VIRTFS_TAG" "$2" "trans=virtio,version=9p2000.L,posixacl" "9p"
+    mount_common "$VIRTFS_TAG" "$2" "trans=virtio,version=9p2000.L,posixacl,_netdev" "9p"
   }
 
   mount_part() {
