@@ -224,11 +224,13 @@ enable_service () {
   local target_dir=$INSTALL
 
   [ -f "$target_dir/$unit_dir/$unit" ] || exit 1
-  [ -z "$target" ] && target=`grep '^WantedBy' $target_dir/$unit_dir/$unit | cut -f2 -d=`
-
-  if [ -n "$target" ]; then
-    mkdir -p ${target_dir}/$unit_dir/${target}.wants
-    ln -sf ../${unit} ${target_dir}/$unit_dir/${target}.wants/
+  if [ -z "$target" ] ; then
+    for target in `grep '^WantedBy' $target_dir/$unit_dir/$unit | cut -f2 -d=` ; do
+      if [ -n "$target" ]; then
+        mkdir -p ${target_dir}/$unit_dir/${target}.wants
+        ln -sf ../${unit} ${target_dir}/$unit_dir/${target}.wants/
+      fi
+    done
   fi
 }
 
@@ -282,7 +284,7 @@ show_config() {
 
   dashes="==========================="
   config_message="$config_message\n $dashes$dashes$dashes"
-  config_message="$config_message\n Configuration for $DISTRONAME ($([ "$OFFICIAL" = "yes" ] && echo "official" || echo "unofficial"))"
+  config_message="$config_message\n Configuration for $DISTRONAME ($([ "$OFFICIAL" = "yes" ] && echo "official" || echo "community"))"
   config_message="$config_message\n $dashes$dashes$dashes"
 
   # Build options

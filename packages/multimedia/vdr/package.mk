@@ -1,6 +1,6 @@
 ################################################################################
 #      This file is part of OpenELEC - http://www.openelec.tv
-#      Copyright (C) 2009-2014 Stephan Raue (stephan@openelec.tv)
+#      Copyright (C) 2009-2016 Stephan Raue (stephan@openelec.tv)
 #      Copyright (C) 2011 Anthony Nash (nash.ant@gmail.com)
 #
 #  OpenELEC is free software: you can redistribute it and/or modify
@@ -55,7 +55,7 @@ EOF
 }
 
 make_target() {
-  make vdr
+  make vdr vdr.pc
   make include-dir
 }
 

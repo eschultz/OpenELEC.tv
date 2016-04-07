@@ -1,6 +1,6 @@
 ################################################################################
 #      This file is part of OpenELEC - http://www.openelec.tv
-#      Copyright (C) 2009-2014 Stephan Raue (stephan@openelec.tv)
+#      Copyright (C) 2009-2016 Stephan Raue (stephan@openelec.tv)
 #
 #  OpenELEC is free software: you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -41,4 +41,10 @@ makeinstall_target() {
 
   mkdir -p $INSTALL/usr/lib/
     cp -PR libhdhomerun.so $INSTALL/usr/lib/
+
+  mkdir -p $SYSROOT_PREFIX/usr/include/hdhomerun
+    cp *.h $SYSROOT_PREFIX/usr/include/hdhomerun
+
+  mkdir -p $SYSROOT_PREFIX/usr/lib
+    cp libhdhomerun.so $SYSROOT_PREFIX/usr/lib
 }

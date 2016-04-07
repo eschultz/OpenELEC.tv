@@ -1,6 +1,6 @@
 ################################################################################
 #      This file is part of OpenELEC - http://www.openelec.tv
-#      Copyright (C) 2009-2014 Stephan Raue (stephan@openelec.tv)
+#      Copyright (C) 2009-2016 Stephan Raue (stephan@openelec.tv)
 #      Copyright (C) 2011 Anthony Nash (nash.ant@gmail.com)
 #
 #  OpenELEC is free software: you can redistribute it and/or modify
@@ -19,7 +19,7 @@
 
 PKG_NAME="vdr-addon"
 PKG_VERSION="6.0"
-PKG_REV="1"
+PKG_REV="2"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"
 PKG_SITE="http://www.openelec.tv"

@@ -1,6 +1,6 @@
 ################################################################################
 #      This file is part of OpenELEC - http://www.openelec.tv
-#      Copyright (C) 2009-2014 Stephan Raue (stephan@openelec.tv)
+#      Copyright (C) 2009-2016 Stephan Raue (stephan@openelec.tv)
 #
 #  OpenELEC is free software: you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -32,4 +32,4 @@ PKG_LONGDESC="Iptables is used to set up, maintain, and inspect the tables of IP
 PKG_IS_ADDON="no"
 PKG_AUTORECONF="yes"
 
-PKG_CONFIGURE_OPTS_TARGET="--with-kernel=$(kernel_path) --enable-static --disable-shared"
+PKG_CONFIGURE_OPTS_TARGET="--with-kernel=$(kernel_path)"

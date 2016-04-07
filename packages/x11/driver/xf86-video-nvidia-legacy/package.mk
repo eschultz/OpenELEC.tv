@@ -1,6 +1,6 @@
 ################################################################################
 #      This file is part of OpenELEC - http://www.openelec.tv
-#      Copyright (C) 2009-2014 Stephan Raue (stephan@openelec.tv)
+#      Copyright (C) 2009-2016 Stephan Raue (stephan@openelec.tv)
 #
 #  OpenELEC is free software: you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -17,7 +17,7 @@
 ################################################################################
 
 PKG_NAME="xf86-video-nvidia-legacy"
-PKG_VERSION="304.128"
+PKG_VERSION="304.131"
 PKG_REV="1"
 PKG_ARCH="x86_64"
 PKG_LICENSE="nonfree"

@@ -2,7 +2,7 @@
 
 ################################################################################
 #      This file is part of OpenELEC - http://www.openelec.tv
-#      Copyright (C) 2009-2014 Stephan Raue (stephan@openelec.tv)
+#      Copyright (C) 2009-2016 Stephan Raue (stephan@openelec.tv)
 #
 #  OpenELEC is free software: you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -27,7 +27,7 @@
   OE_TMP=$(mktemp -d)
   LOOP=$(losetup -f)
 
-  SYSTEM_SIZE=256
+  SYSTEM_SIZE=512
   STORAGE_SIZE=32 # STORAGE_SIZE must be >= 32 !
 
   DISK_SIZE=$(( $SYSTEM_SIZE + $STORAGE_SIZE + 4 ))
@@ -99,6 +99,7 @@ fi
 
 # create filesystem on part1
   losetup -d "$LOOP"
+  sync
   echo "image: creating filesystem on part1..."
   OFFSET=$(( 2048 * 512 ))
   SIZELIMIT=$(( $SYSTEM_SIZE * 1024 * 1024 ))
@@ -227,6 +228,7 @@ fi # bootloader
 
 # create filesystem on part2
   losetup -d "$LOOP"
+  sync
   echo "image: creating filesystem on part2..."
   OFFSET=$(( $STORAGE_PART_START * 512 ))
   SIZELIMIT=$(( $STORAGE_SIZE * 1024 * 1024 ))
