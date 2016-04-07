@@ -16,23 +16,21 @@
 #  along with OpenELEC.  If not, see <http://www.gnu.org/licenses/>.
 ################################################################################
 
-ACTION!="add|change", GOTO="end_video"
+PKG_NAME="spice-protocol"
+PKG_VERSION="0.12.10"
+PKG_REV="1"
+PKG_ARCH="any"
+PKG_LICENSE="OSS"
+PKG_SITE="http://www.spice-space.org/"
+PKG_URL="http://www.spice-space.org/download/releases/$PKG_NAME-$PKG_VERSION.tar.bz2"
+PKG_DEPENDS_TARGET="toolchain"
+PKG_PRIORITY="optional"
+PKG_SECTION="x11/proto"
+PKG_SHORTDESC="spice-protocol: SPICE headers"
+PKG_LONGDESC="SPICE headers"
 
-# xorg_start only does something for subsystem "pci" and "video" class.
-SUBSYSTEM=="pci", ATTR{class}=="0x030000", GOTO="subsystem_pci"
-SUBSYSTEM=="drivers", GOTO="subsystem_drivers"
-GOTO="end_video"
+PKG_IS_ADDON="no"
+PKG_AUTORECONF="yes"
 
-# check for drivers dont use the pci substem
-LABEL="subsystem_drivers"
-KERNEL=="nvidia", ENV{xorg_driver}="nvidia", TAG+="systemd", ENV{SYSTEMD_WANTS}+="xorg-configure@nvidia.service"
-GOTO="end_video"
-
-# check for drivers using the pci substem
-LABEL="subsystem_pci"
-DRIVER=="i915", ENV{xorg_driver}="i915", TAG+="systemd", ENV{SYSTEMD_WANTS}+="xorg-configure@i915.service"
-DRIVER=="radeon", ENV{xorg_driver}="radeon", TAG+="systemd", ENV{SYSTEMD_WANTS}+="xorg-configure@radeon.service"
-DRIVER=="qxl", ENV{xorg_driver}="qxl", TAG+="systemd", ENV{SYSTEMD_WANTS}+="xorg-configure@qxl.service"
-GOTO="end_video"
-
-LABEL="end_video"
+# package specific configure options
+PKG_CONFIGURE_OPTS_TARGET=""
